@@ -70,8 +70,8 @@
                     <a href="#spots" class="px-2 py-2 font-medium text-slate-600 hover:text-[#004098]">관광안내</a>
                     <a href="#dining" class="px-2 py-2 font-medium text-rose-600 hover:text-rose-800"><i class="fa-solid fa-utensils mr-1"></i>식사안내</a>
                     <a href="#smart-info" class="px-2 py-2 font-medium text-blue-600 hover:text-blue-800">현지정보</a>
+                    <a href="#survival" class="px-2 py-2 font-medium text-emerald-600 hover:text-emerald-800"><i class="fa-solid fa-language mr-1"></i>생존회화</a>
                     <a href="#check" class="px-2 py-2 font-medium text-slate-600 hover:text-[#004098]">준비물</a>
-                    <a href="price-estimate.html" class="px-2 py-2 font-bold text-emerald-700 hover:text-emerald-900"><i class="fa-solid fa-file-invoice-dollar mr-1"></i>가격산출</a>
                 </div>
             </div>
             <button onclick="shareLink()" class="shrink-0 p-2 text-slate-500 hover:text-[#004098] ml-2" title="공유"><i class="fa-solid fa-share-nodes text-xl"></i></button>
@@ -480,7 +480,7 @@
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div class="bg-slate-900 rounded-2xl border border-slate-700 p-5">
-                        <h4 class="text-white font-bold mb-3"><i class="fa-solid fa-cloud-sun text-amber-400 mr-2"></i>상해 7일 일기예보</h4>
+                        <h4 class="text-white font-bold mb-3"><i class="fa-solid fa-cloud-sun text-amber-400 mr-2"></i>상해 5일 일기예보</h4>
                         <div id="weather-container" class="flex overflow-x-auto gap-3 pb-2 no-scrollbar text-slate-500 text-sm"><i class="fa-solid fa-spinner fa-spin mr-2"></i>불러오는 중...</div>
                         <div id="clothing-recommendation" class="bg-slate-800 p-3 rounded-xl mt-3 text-sm text-slate-300">데이터 분석 중...</div>
                     </div>
@@ -498,20 +498,70 @@
         </div>
     </section>
 
-    <!-- Checklist -->
+    <!-- Survival Phrases -->
+    <section id="survival" class="py-16 bg-emerald-50 border-t border-emerald-100">
+        <div class="container mx-auto px-4 text-center">
+            <span class="inline-block bg-emerald-100 text-emerald-700 text-xs px-3 py-1 rounded-full font-bold shadow-sm mb-3">SURVIVAL PHRASES</span>
+            <h2 class="text-3xl font-bold text-slate-800 mb-2">생존 중국어 회화</h2>
+            <p class="text-sm text-slate-500 mb-8">발음이 어려울 땐 버튼을 눌러 화면을 현지인에게 보여주세요.</p>
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 px-2">
+                <button onclick="showPhrase('👋','안녕하세요 / 감사합니다','니하오 / 씨에씨에','你好 / 谢谢')" class="bg-white p-4 rounded-2xl shadow-sm border border-emerald-200 hover:shadow-md transition flex flex-col items-center gap-2 active:scale-95">
+                    <span class="text-3xl">👋</span><span class="font-bold text-sm text-slate-700">인사/감사</span>
+                </button>
+                <button onclick="showPhrase('💳','알리페이로 계산할게요','즈푸바오 마이단','支付宝买单。')" class="bg-white p-4 rounded-2xl shadow-sm border border-emerald-200 hover:shadow-md transition flex flex-col items-center gap-2 active:scale-95">
+                    <span class="text-3xl">💳</span><span class="font-bold text-sm text-slate-700">알리페이 결제</span>
+                </button>
+                <button onclick="showPhrase('🧻','화장실이 어디인가요?','씨쇼우지엔 짜이 날?','洗手间在哪里？')" class="bg-white p-4 rounded-2xl shadow-sm border border-emerald-200 hover:shadow-md transition flex flex-col items-center gap-2 active:scale-95">
+                    <span class="text-3xl">🧻</span><span class="font-bold text-sm text-slate-700">화장실 찾기</span>
+                </button>
+                <button onclick="showPhrase('🌶️','덜 맵게 해주세요','웨이라','微辣。')" class="bg-white p-4 rounded-2xl shadow-sm border border-emerald-200 hover:shadow-md transition flex flex-col items-center gap-2 active:scale-95">
+                    <span class="text-3xl">🌶️</span><span class="font-bold text-sm text-slate-700">덜 맵게</span>
+                </button>
+                <button onclick="showPhrase('🚕','미터기 켜주세요','다뱌오','打表。')" class="bg-white p-4 rounded-2xl shadow-sm border border-emerald-200 hover:shadow-md transition flex flex-col items-center gap-2 active:scale-95">
+                    <span class="text-3xl">🚕</span><span class="font-bold text-sm text-slate-700">미터기 요구</span>
+                </button>
+                <button onclick="showPhrase('📸','사진 좀 찍어주시겠어요?','방 워 파이 장 자오 피엔 하오 마?','帮我拍张照片好吗？')" class="bg-white p-4 rounded-2xl shadow-sm border border-emerald-200 hover:shadow-md transition flex flex-col items-center gap-2 active:scale-95">
+                    <span class="text-3xl">📸</span><span class="font-bold text-sm text-slate-700">사진 요청</span>
+                </button>
+            </div>
+        </div>
+        <div id="phrase-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[999] hidden flex items-center justify-center p-4" onclick="closePhrase()">
+            <div class="bg-white w-full max-w-sm rounded-3xl p-8 text-center shadow-2xl" onclick="event.stopPropagation()">
+                <div id="modal-emoji" class="text-6xl mb-4"></div>
+                <p id="modal-kr-meaning" class="text-slate-500 font-bold text-sm mb-1"></p>
+                <p id="modal-kr-pron" class="text-slate-800 font-black text-xl mb-6"></p>
+                <div class="bg-emerald-50 py-6 px-2 rounded-2xl border border-emerald-100 mb-6">
+                    <p id="modal-local" class="text-emerald-700 font-black text-4xl leading-tight"></p>
+                </div>
+                <p class="text-xs text-slate-400 font-bold mb-6">👉 이 화면을 현지인에게 보여주세요</p>
+                <button onclick="closePhrase()" class="w-full bg-slate-800 text-white font-bold py-3 rounded-xl">닫기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checklist & Memo -->
     <section id="check" class="py-16 bg-slate-50 border-t">
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-slate-800">출국 전 준비물 체크</h2>
+                <span class="text-slate-600 font-black tracking-widest text-xs uppercase">PREPARATION</span>
+                <h2 class="text-3xl font-bold text-slate-800 mt-2">필수 준비물 & 메모</h2>
+                <p class="text-sm text-slate-500 mt-2">출국 전 꼼꼼히 체크하고 필요한 내용을 메모해 보세요.</p>
             </div>
-            <div class="max-w-2xl mx-auto bg-white p-6 rounded-2xl border shadow-sm">
-                <div id="checklist-container" class="space-y-2"></div>
-                <button onclick="resetChecklist()" class="mt-4 text-xs text-slate-500 underline">[초기화]</button>
-            </div>
-            <div class="text-center mt-8">
-                <a href="price-estimate.html" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-2xl shadow-lg transition">
-                    <i class="fa-solid fa-file-invoice-dollar"></i> 별도 가격 산출 내역서 보기
-                </a>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border shadow-sm">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-lg text-slate-800"><i class="fa-solid fa-check-double mr-2 text-[#004098]"></i>짐 싸기 확인</h3>
+                        <button onclick="resetChecklist()" class="text-xs text-slate-500 underline hover:text-red-500">[초기화]</button>
+                    </div>
+                    <div id="checklist-container" class="space-y-2"></div>
+                </div>
+                <div class="bg-amber-50 p-6 rounded-2xl border border-amber-200 shadow-sm flex flex-col relative">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-lg text-amber-900"><i class="fa-solid fa-pen-to-square mr-2"></i>개인 메모장</h3>
+                        <span id="memo-status" class="text-xs text-amber-600 font-bold opacity-0 transition-opacity bg-amber-100 px-2 py-1 rounded">자동 저장됨</span>
+                    </div>
+                    <textarea id="personal-memo" class="w-full min-h-[220px] bg-transparent border-none resize-none focus:ring-0 text-amber-900 placeholder-amber-700/50 leading-loose text-[15px] outline-none flex-1" placeholder="작성 시 자동 저장됩니다."></textarea>
+                </div>
             </div>
         </div>
     </section>
@@ -525,9 +575,18 @@
     </section>
 
     <footer class="bg-[#f8f9fa] py-12 border-t text-center">
-        <a href="https://www.kpc.or.kr" target="_blank" rel="noopener noreferrer" class="inline-block border rounded-xl px-6 py-3 bg-white font-bold text-sm mb-6"><i class="fa-solid fa-home mr-1"></i> 한국생산성본부</a>
-        <p class="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">IBK기업은행 상해 해외연수 제안 스마트 가이드북 · 한국생산성본부</p>
-        <p class="text-[10px] text-slate-400 mt-4">&copy; 2026 Korea Productivity Center</p>
+        <div class="mb-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://www.kpc.or.kr" target="_blank" rel="noopener noreferrer" class="inline-block border border-slate-300 rounded-xl px-6 py-3 bg-white text-slate-700 font-bold hover:bg-slate-50 transition text-sm">
+                <i class="fa-solid fa-building mr-1"></i> 한국생산성본부
+            </a>
+            <a href="http://tourmaker.kr" target="_blank" rel="noopener noreferrer" class="inline-block border border-slate-300 rounded-xl px-6 py-3 bg-white text-slate-700 font-bold hover:bg-slate-50 transition text-sm">
+                <i class="fa-solid fa-globe mr-1"></i> 투어메이커
+            </a>
+        </div>
+        <p class="text-[12px] text-[#6c757d] font-normal mb-4 max-w-2xl mx-auto leading-relaxed px-4">
+            [System Powered by TOURMAKER] 본 스마트 가이드북은 <strong>한국생산성본부</strong>의 기획과 <a href="http://tourmaker.kr" target="_blank" rel="noopener noreferrer" class="font-bold text-[#6c757d] hover:text-slate-900 underline underline-offset-2">투어메이커</a>의 트래블 테크 기술 제휴로 제작되었습니다.
+        </p>
+        <p class="text-[10px] text-slate-400">&copy; 2026 Korea Productivity Center · Tourmaker Inc.</p>
     </footer>
 </div>
 
@@ -599,7 +658,32 @@ function renderChecklist() {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(s));
     }));
 }
-function resetChecklist() { if (confirm('초기화?')) { localStorage.removeItem(STORAGE_KEY); renderChecklist(); } }
+function resetChecklist() { if (confirm('체크리스트를 초기화하시겠습니까?')) { localStorage.removeItem(STORAGE_KEY); renderChecklist(); } }
+
+function showPhrase(emoji, krMeaning, krPron, localText) {
+    document.getElementById('modal-emoji').textContent = emoji;
+    document.getElementById('modal-kr-meaning').textContent = krMeaning;
+    document.getElementById('modal-kr-pron').textContent = krPron;
+    document.getElementById('modal-local').textContent = localText;
+    document.getElementById('phrase-modal').classList.remove('hidden');
+}
+function closePhrase() { document.getElementById('phrase-modal').classList.add('hidden'); }
+
+const MEMO_KEY = 'ibk_memo_v1';
+function initMemo() {
+    const memoEl = document.getElementById('personal-memo');
+    const statusEl = document.getElementById('memo-status');
+    if (!memoEl) return;
+    const saved = localStorage.getItem(MEMO_KEY);
+    if (saved) memoEl.value = saved;
+    let timeoutId;
+    memoEl.addEventListener('input', () => {
+        localStorage.setItem(MEMO_KEY, memoEl.value);
+        statusEl.classList.remove('opacity-0');
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => statusEl.classList.add('opacity-0'), 1500);
+    });
+}
 
 let map, markersLayer, linesLayer;
 const spots = {
@@ -686,12 +770,13 @@ async function fetchWeather() {
         const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=31.2304&longitude=121.4737&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=Asia%2FShanghai');
         data = await res.json();
     } catch(e) {
-        data = { daily: { time: [], weathercode: [1,2,3,1,0,2,1], temperature_2m_max: [24,25,23,22,24,26,25], temperature_2m_min: [16,17,15,14,15,17,16] } };
-        for (let i=0;i<7;i++) { const d=new Date(); d.setDate(d.getDate()+i); data.daily.time.push(d.toISOString().split('T')[0]); }
+        data = { daily: { time: [], weathercode: [1,2,3,1,0], temperature_2m_max: [24,25,23,22,24], temperature_2m_min: [16,17,15,14,15] } };
+        for (let i=0;i<5;i++) { const d=new Date(); d.setDate(d.getDate()+i); data.daily.time.push(d.toISOString().split('T')[0]); }
     }
     const icons = { 0:'☀️', 1:'🌤️', 2:'⛅', 3:'☁️', 61:'🌧️' };
     let html = '', tmax=0, tmin=0;
-    for (let i=0;i<7;i++) {
+    const days = 5;
+    for (let i=0;i<days;i++) {
         const d = new Date(data.daily.time[i]);
         const day = ['일','월','화','수','목','금','토'][d.getDay()];
         const mx = Math.round(data.daily.temperature_2m_max[i]);
@@ -701,9 +786,9 @@ async function fetchWeather() {
         html += `<div class="flex-shrink-0 w-20 bg-slate-800 rounded-lg p-2 text-center border border-slate-700"><p class="text-[10px] text-slate-400">${d.getMonth()+1}/${d.getDate()}(${day})</p><p class="text-lg my-1">${icons[code]||'☁️'}</p><p class="text-xs text-white">${mn}°/${mx}°</p></div>`;
     }
     c.innerHTML = html;
-    cloth.innerHTML = `평균 <strong>${Math.round(tmin/7)}°~${Math.round(tmax/7)}°C</strong>. 반팔·얇은 겉옷·편한 신발 권장. 실내 에어컨 강함.`;
+    cloth.innerHTML = `향후 5일 평균 <strong>${Math.round(tmin/days)}°~${Math.round(tmax/days)}°C</strong>. 반팔·얇은 겉옷·편한 신발 권장. 실내 에어컨 강함.`;
 }
-document.addEventListener('DOMContentLoaded', () => { renderChecklist(); fetchExchangeRate(); fetchWeather(); });
+document.addEventListener('DOMContentLoaded', () => { renderChecklist(); initMemo(); fetchExchangeRate(); fetchWeather(); });
 </script>
 </body>
 </html>
