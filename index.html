@@ -43,8 +43,10 @@
             table { page-break-inside: auto; word-break: keep-all; }
             tr { page-break-inside: avoid; page-break-after: auto; }
             th { background-color: #004098 !important; color: white !important; }
-            #print-area td { line-height: 1.5; padding: 6px !important; }
-            #print-area th { padding: 8px 4px !important; }
+            #print-area td { line-height: 1.45; padding: 5px 6px !important; }
+            #print-area th { padding: 7px 4px !important; }
+            #print-area .spot-desc { font-size: 10px; color: #475569; font-weight: normal; display: block; margin: 1px 0 4px 14px; line-height: 1.35; }
+            #print-area .guide-box { font-size: 10px; line-height: 1.4; }
             .print-hidden { display: none !important; }
         }
     </style>
@@ -611,104 +613,134 @@
 </div>
 
 <!-- Print Area (투어메이커 표준 A4 일정 양식) -->
-<div id="print-area" class="hidden print:block w-full bg-white text-black py-2">
-    <div class="flex justify-between items-center mb-4 border-b-2 border-[#004098] pb-4">
+<div id="print-area" class="hidden print:block w-full bg-white text-black py-1">
+    <div class="flex justify-between items-center mb-3 border-b-2 border-[#004098] pb-3">
         <div>
-            <h1 class="text-2xl font-black text-[#004098]" style="font-family: 'Nanum Myeongjo', serif;">IBK기업은행 상해 2박 3일 해외연수 일정표</h1>
-            <p class="text-[11px] text-slate-600 font-bold mt-1">한국생산성본부 기획 제안</p>
+            <h1 class="text-[22px] font-black text-[#004098] leading-tight" style="font-family: 'Nanum Myeongjo', serif;">IBK기업은행 상해 2박 3일 해외연수 일정표</h1>
+            <p class="text-[10px] text-slate-600 font-bold mt-0.5">한국생산성본부 기획 제안</p>
         </div>
-        <img src="assets/kpc-logo.jpg" alt="한국생산성본부" class="h-8">
+        <img src="assets/kpc-logo.jpg" alt="한국생산성본부" class="h-7">
     </div>
 
-    <div class="mb-4 font-bold text-xs leading-relaxed text-slate-800">
+    <div class="mb-3 font-bold text-[11px] leading-snug text-slate-800">
         <p>■ 일 정 : 중국 상해 2박 3일 <span class="font-normal text-slate-500">(출발일 협의 후 확정)</span></p>
-        <p>■ 인 원 : 1회 약 200명 <span class="font-normal">(45인승 대형버스 5대 · 1대당 40명 편성)</span></p>
-        <p class="text-red-700">■ 항 공 : 아시아나항공 OZ361/OZ363 출국 · OZ366 귀국 (인천국제공항 T2)</p>
-        <p>■ 호 텔 : 상해 5성급 호텔 2박 <span class="font-normal">(푸동 샹그릴라 또는 웨스틴 번드센터 후보)</span></p>
-        <p class="text-blue-800">■ 조 건 : 교육연수·벤치마킹 목적 / 공식 방문 일정은 2·3일차 중간 시간대 협의 후 확정</p>
+        <p>■ 인 원 : 1회 약 200명 (45인승 대형버스 5대 · 1대당 40명) · ■ 항 공 : 아시아나 OZ361/OZ363 출국 · OZ366 귀국 (인천 T2)</p>
+        <p>■ 호 텔 : 상해 5성급 2박 (푸동 샹그릴라 / 웨스틴 번드센터) · ■ 조 건 : 교육연수·벤치마킹 / 공식방문 2·3일차 협의 후 확정</p>
         <p class="text-slate-600">■ 기 획 : <strong>한국생산성본부</strong> 제안 · [System Powered by TOURMAKER]</p>
     </div>
 
-    <table class="w-full border-collapse border-2 border-slate-800 text-[12px]" style="word-break: keep-all;">
+    <table class="w-full border-collapse border-2 border-slate-800 text-[11px]" style="word-break: keep-all;">
         <colgroup>
-            <col style="width: 11%;">
-            <col style="width: 75%;">
-            <col style="width: 14%;">
+            <col style="width: 10%;">
+            <col style="width: 78%;">
+            <col style="width: 12%;">
         </colgroup>
         <thead>
             <tr class="bg-[#004098] text-white">
-                <th class="border border-slate-800 py-2 px-1 text-center font-bold">일자</th>
-                <th class="border border-slate-800 py-2 px-2 text-center font-bold">상세일정 (지역 및 교통편 포함)</th>
-                <th class="border border-slate-800 py-2 px-1 text-center font-bold">식사</th>
+                <th class="border border-slate-800 py-1.5 px-1 text-center font-bold">일자</th>
+                <th class="border border-slate-800 py-1.5 px-2 text-center font-bold">상세일정 및 방문지 안내</th>
+                <th class="border border-slate-800 py-1.5 px-1 text-center font-bold">식사</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td class="border border-slate-800 py-2 px-1 text-center align-middle font-bold">
-                    1일차<br><span class="text-[10px] font-normal text-slate-500">출국일</span>
+                    1일차<br><span class="text-[9px] font-normal text-slate-500">출국일</span>
                 </td>
-                <td class="border border-slate-800 py-2 px-3 align-top leading-snug">
+                <td class="border border-slate-800 py-2 px-2 align-top leading-snug">
                     <span class="font-bold text-[#004098]">[인천-상해 / OZ361 09:00-10:05 / 전용버스]</span><br>
-                    ■ 인천국제공항 집결 및 출국 수속 후 아시아나항공편 상해(푸동) 도착<br>
-                    ■ 중식 후 <strong>5성급 호텔</strong> 체크인 및 휴식<br>
-                    ■ 한국 근대사의 중심이었던 <strong>상해 대한민국 임시정부청사</strong> 방문<br>
-                    ■ 도시재생 복합문화공간 <strong>신천지(新天地)</strong> 방문<br>
-                    ■ <strong>난징동루</strong> 보행가 관광<br>
-                    ■ 석식 후 <strong>와이탄 야경</strong> 감상 및 <strong>황푸강 유람선</strong> 탑승<br>
-                    ■ 호텔 투숙 및 휴식
+                    ■ 06:00 인천국제공항 집결 · 출국 수속 후 상해(푸동) 도착 및 입국<br>
+                    ■ 12:30 중식 후 <strong>5성급 호텔</strong> 체크인 및 휴식<br>
+                    ■ <strong>상해 대한민국 임시정부청사</strong> 방문
+                    <span class="spot-desc">3·1운동 이후 상해에서 독립운동을 전개한 역사 현장. 김구 등 독립운동가들이 활동하며 건국 정신을 되새기는 교육·역사 코스.</span>
+                    ■ <strong>신천지(新天地)</strong> 방문
+                    <span class="spot-desc">상하이 석문리(石库门) 건축을 보존한 도시재생 사례. 전통 주거와 현대 상업·카페가 조화를 이루는 복합문화 거리.</span>
+                    ■ <strong>난징동루</strong> 보행가 관광
+                    <span class="spot-desc">상해 최대 번화가이자 보행자 전용 거리. 현대 소비문화와 도시 상업 환경을 체험하는 코스.</span>
+                    ■ 석식 후 <strong>와이탄 야경</strong> 및 <strong>황푸강 유람선</strong> 탑승
+                    <span class="spot-desc">황푸강을 사이에 둔 와이탄(외탄) 식민시대 건축과 푸동 마천루 스카이라인. 유람선에서 감상하는 야경이 상해 여행의 하이라이트.</span>
+                    ■ 21:30 호텔 투숙
                 </td>
-                <td class="border border-slate-800 py-2 px-1 text-center align-middle text-[11px]">
-                    [조] -<br>
-                    [중] 현지식<br>
-                    [석] 현지식
+                <td class="border border-slate-800 py-2 px-1 text-center align-middle text-[10px]">
+                    [조] -<br>[중] 현지식<br>[석] 현지식
                 </td>
             </tr>
             <tr>
                 <td class="border border-slate-800 py-2 px-1 text-center align-middle font-bold">
-                    2일차<br><span class="text-[10px] font-normal text-slate-500">연수·관광</span>
+                    2일차<br><span class="text-[9px] font-normal text-slate-500">연수·관광</span>
                 </td>
-                <td class="border border-slate-800 py-2 px-3 align-top leading-snug">
+                <td class="border border-slate-800 py-2 px-2 align-top leading-snug">
                     <span class="font-bold text-[#004098]">[상해 / 전용버스]</span><br>
-                    ■ 호텔 조식 후 출발<br>
-                    ■ <strong>스타벅스 리저브 로스터리</strong> 방문 (브랜드·CX 벤치마킹)<br>
-                    ■ <strong>주자각(朱家角)</strong> 수향마을 관광 및 뱃놀이 체험<br>
-                    ■ <strong>예원 및 예원 옛거리</strong> 방문<br>
-                    ■ <strong>ERA 시공의 교차점(마시청 서커스)</strong> 관람<br>
-                    ■ 발 마사지 60분 또는 호텔 휴식 <span class="text-[10px] text-slate-500">(※ 공식 은행·핀테크 방문 확정 시 주자각 조정 가능)</span><br>
-                    ■ 호텔 투숙 및 휴식
+                    ■ 07:00 호텔 조식 후 출발<br>
+                    ■ <strong>스타벅스 리저브 로스터리</strong> 방문
+                    <span class="spot-desc">2017년 개점 당시 세계 최대 규모 플래그십. 로스팅·브루잉·베이커리 일원화 공간으로 글로벌 브랜드 마케팅·고객경험(CX) 벤치마킹 코스.</span>
+                    ■ <strong>주자각(朱家角)</strong> 수향마을 관광 및 뱃놀이
+                    <span class="spot-desc">1,700년 역사의 강남 수향, '동방의 베니스'. 운하·석교·전통 가옥과 뱃놀이로 상해의 전통 문화를 체험. <em class="text-slate-500">(※ 공식 은행·핀테크 방문 확정 시 생략·조정 가능)</em></span>
+                    ■ <strong>예원 및 예원 옛거리</strong> 방문
+                    <span class="spot-desc">명·청 시대 정원과 전통 상점가가 어우러진 상해 대표 관광지. 중국 전통 건축·정원 문화를 감상.</span>
+                    ■ <strong>ERA 시공의 교차점(마시청 서커스)</strong> 관람
+                    <span class="spot-desc">세계 3대 서커스로 꼽히는 화려한 곡예 공연. 중국 전통 아크로바틱과 현대 무대 기술·조명의 조화.</span>
+                    ■ 21:00 발 마사지 60분 또는 호텔 휴식 후 숙박
                 </td>
-                <td class="border border-slate-800 py-2 px-1 text-center align-middle text-[11px]">
-                    [조] 호텔<br>
-                    [중] 현지식<br>
-                    [석] 현지식
+                <td class="border border-slate-800 py-2 px-1 text-center align-middle text-[10px]">
+                    [조] 호텔<br>[중] 현지식<br>[석] 현지식
                 </td>
             </tr>
             <tr>
                 <td class="border border-slate-800 py-2 px-1 text-center align-middle font-bold">
-                    3일차<br><span class="text-[10px] font-normal text-slate-500">귀국일</span>
+                    3일차<br><span class="text-[9px] font-normal text-slate-500">귀국일</span>
                 </td>
-                <td class="border border-slate-800 py-2 px-3 align-top leading-snug">
-                    <span class="font-bold text-[#004098]">[상해-인천 / 전용버스 / OZ366 14:00 출발]</span><br>
-                    ■ 호텔 조식 후 체크아웃 및 수하물 정리<br>
-                    ■ 토머스 헤더윅 설계 <strong>천안천수 1000Trees</strong> 방문<br>
-                    ■ 중식 후 상해 푸동국제공항 이동 및 탑승 수속<br>
-                    ■ 아시아나항공(OZ366) 탑승 후 인천국제공항 도착 및 해산
+                <td class="border border-slate-800 py-2 px-2 align-top leading-snug">
+                    <span class="font-bold text-[#004098]">[상해-인천 / OZ366 14:00 출발 / 전용버스]</span><br>
+                    ■ 07:00 호텔 조식 · 08:00 체크아웃 및 수하물 정리<br>
+                    ■ <strong>천안천수 1000Trees</strong> 방문
+                    <span class="spot-desc">토머스 헤더윅 설계의 복합문화 상업 공간. 수백 개 기둥 위 수목으로 산·숲을 연상시키는 미래형 도시 건축. 서울 노들섬·부산 이기대 아트파크 등 국내 공공공간 벤치마킹에 의미.</span>
+                    ■ 11:30 중식 후 상해 푸동국제공항 이동 · 탑승 수속<br>
+                    ■ 14:00 OZ366 출발 · 인천국제공항 도착 후 해산
                 </td>
-                <td class="border border-slate-800 py-2 px-1 text-center align-middle text-[11px]">
-                    [조] 호텔<br>
-                    [중] 현지식<br>
-                    [석] 기내식
+                <td class="border border-slate-800 py-2 px-1 text-center align-middle text-[10px]">
+                    [조] 호텔<br>[중] 현지식<br>[석] 기내식
                 </td>
             </tr>
         </tbody>
     </table>
 
-    <div class="mt-3 flex justify-between items-end text-[10px] text-slate-600">
-        <p class="font-bold leading-relaxed">
-            ※ 원활한 행사를 위해 현지 상황에 따라 일정이 변경될 수 있습니다.<br>
+    <!-- 방문지·연수 프로그램 보조 안내 (A4 하단 채움) -->
+    <div class="mt-2 border-2 border-slate-300 rounded-sm overflow-hidden">
+        <div class="bg-slate-100 border-b border-slate-300 px-2 py-1 text-[10px] font-black text-[#004098]">【 공식 연수·벤치마킹 방문 후보 】 ※ 2일차 또는 3일차 중간 시간대 협의 후 확정</div>
+        <div class="grid grid-cols-3 gap-0 guide-box divide-x divide-slate-200">
+            <div class="px-2 py-1.5 border-b border-slate-200">
+                <p class="font-bold text-slate-800">중국공상은행 상해지점</p>
+                <p class="text-slate-600">대형 국영은행의 디지털 전환·모바일뱅킹·리테일 금융 운영 사례 현장 벤치마킹.</p>
+            </div>
+            <div class="px-2 py-1.5 border-b border-slate-200">
+                <p class="font-bold text-slate-800">상해 은행박물관</p>
+                <p class="text-slate-600">중국 금융 발전사와 화폐·결제 수단 변천을 체계적으로 학습하는 교육형 시설.</p>
+            </div>
+            <div class="px-2 py-1.5 border-b border-slate-200">
+                <p class="font-bold text-slate-800">모바일 결제 체험</p>
+                <p class="text-slate-600">알리페이·위챗페이 등 중국 모바일 결제 생태계 직접 체험 및 핀테크 트렌드 이해.</p>
+            </div>
+        </div>
+        <div class="bg-slate-100 border-b border-slate-300 px-2 py-1 text-[10px] font-black text-[#004098]">【 숙소 후보 특징 】</div>
+        <div class="grid grid-cols-2 gap-0 guide-box">
+            <div class="px-2 py-1.5 border-r border-slate-200">
+                <p class="font-bold text-slate-800">1안 · Pudong Shangri-La Shanghai</p>
+                <p class="text-slate-600">푸동 루자쭈이 금융지구. 금융도시 품격·상하이타워·동방명주·와이탄 접근 우수.</p>
+            </div>
+            <div class="px-2 py-1.5">
+                <p class="font-bold text-slate-800">2안 · The Westin Bund Center Shanghai</p>
+                <p class="text-slate-600">와이탄·예원·난징동루 동선 우수. 이동 효율·조식 품질·관광 만족도 중심 구성에 적합.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-2 flex justify-between items-end text-[9px] text-slate-600 leading-snug">
+        <p class="font-bold">
+            ※ 원활한 행사를 위해 현지 상황에 따라 방문 순서 및 일정이 변경될 수 있습니다.<br>
             ※ 본 일정표는 <strong>한국생산성본부</strong>가 기획·제안한 IBK기업은행 상해 해외연수 제안안입니다.
         </p>
-        <p class="text-right font-bold whitespace-nowrap ml-4">[System Powered by TOURMAKER]</p>
+        <p class="text-right font-bold whitespace-nowrap ml-3">[System Powered by TOURMAKER]</p>
     </div>
 </div>
 
