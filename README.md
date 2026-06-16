@@ -1,4 +1,4 @@
-# IBK기업은행 상해 해외연수 스마트 제안 가이드북 · 싱크버스 (SYNCVERSE)版
+# 은행 상해 해외연수 스마트 제안 가이드북 · 싱크버스 (SYNCVERSE)版
 
 - **제안 가이드 URL:** https://indadady.github.io/270101_SV/
 - **가격 산출 내역서:** 별도 제출 문서 (`price-estimate.html`, 가이드북 내 링크 없음)
